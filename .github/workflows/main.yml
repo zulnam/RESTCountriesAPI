@@ -24,11 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Dev
-        run: npm run dev
-
       - name: Run tests
         run: npm run test-h
+        with:
+          start: npm run dev
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
