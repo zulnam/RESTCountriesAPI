@@ -4,6 +4,10 @@
 
 This web app is a submission for the API Countries Challenge for the frontend, using NextJS, Redux and Emotion.
 
+## Demo
+
+[Link to Demo](https://rest-countries-12341awfj-zulnam.vercel.app), courtesy of Vercel.
+
 ## Getting Started
 
 After clonning the repository, run `yarn` or `npm i` to install the necessary dependencies.
@@ -32,7 +36,7 @@ These is the work required to consider this project "done", split into sizeable 
 | Click on a country to see more detailed information on a separate page. | :white_check_mark:        |
 | Add end to end (E2E) tests                                              | :white_check_mark:        |
 | Optimize for performance                                                | :inbox_tray:              |
-| Configure your repository to publish your code to a web address.        | :construction_worker_man: |
-| Toggle the color scheme between light and dark mode                     | :inbox_tray:              |
+| Configure your repository to publish your code to a web address.        | :white_check_mark:        |
+| Toggle the color scheme between light and dark mode                     | :construction_worker_man: |
 | Filter countries by region                                              | :white_check_mark:        |
 | Click through to the border countries on the detail page                | :white_check_mark:        |
