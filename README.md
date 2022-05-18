@@ -11,10 +11,15 @@ To run local development environent, run `yarn dev` or `npm run dev`.
 
 ## All Commands
 
-`build` - build the web app into the .next folder
-`dev` - run local environment (port 3000) in development mode.
-`start` - run the built bundle locally.
-`lint` - run check for errors, syntax and code styling rules.
+| Command  | Description                                           |
+| -------- | ----------------------------------------------------- |
+| `build`  | build the web app into the .next folder               |
+| `dev`    | run local environment (port 3000) in development mode |
+| `start`  | run the built bundle locally                          |
+| `lint`   | run check for errors, syntax and code styling rules   |
+| `test`   | run cypress frontend for e2e tests                    |
+| `test-h` | run cypress tests headless                            |
+| `export` | exports web app to html (for github pages deployment) |
 
 ## Backlog
 
