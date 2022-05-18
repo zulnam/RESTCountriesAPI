@@ -896,7 +896,7 @@ const countriesFixture = [
     area: 131990,
     gini: 32.9,
     timezones: ['UTC+02:00'],
-    borders: ['ALB', 'BGR', 'TUR', 'MKD'],
+    borders: ['ALB', 'MKD'],
     nativeName: 'Ελλάδα',
     numericCode: '300',
     flags: {
