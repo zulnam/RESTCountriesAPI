@@ -21,8 +21,13 @@
     "react-redux": "^8.0.1"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.9.12",
+    "babel-plugin-istanbul": "^6.1.1",
     "cypress": "^9.6.1",
     "eslint": "8.15.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "eslint-plugin-cypress": "^2.12.1",
+    "istanbul-lib-coverage": "^3.2.0",
+    "nyc": "^15.1.0"
   }
 }
