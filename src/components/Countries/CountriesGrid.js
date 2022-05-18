@@ -16,7 +16,7 @@ const CountriesGrid = () => {
   );
 
   return (
-    <CountriesContainer>
+    <CountriesContainer data-cy="countries-container">
       {filteredCountries.length
         ? filteredCountries.map((country) => (
             <CountryCard

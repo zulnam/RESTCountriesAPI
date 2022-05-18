@@ -55,6 +55,7 @@ const Dropdown = () => {
   return (
     <div>
       <DropdownButton
+        data-cy="dropdown-button"
         onClick={() => {
           setIsOpen(!isOpen);
         }}
@@ -69,7 +70,7 @@ const Dropdown = () => {
           />
         </IconContainer>
       </DropdownButton>
-      <DropdownContent isOpen={isOpen}>
+      <DropdownContent data-cy="dropdown-content" isOpen={isOpen}>
         <a
           href="#"
           onClick={() => {

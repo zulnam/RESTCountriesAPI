@@ -58,6 +58,7 @@ const SearchInput = () => {
       <input
         type="text"
         name="search"
+        data-cy="search-input"
         placeholder="Search for a country..."
         value={value}
         onChange={changeHandler}
