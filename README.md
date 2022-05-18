@@ -21,11 +21,11 @@ These is the work required to consider this project "done", split into sizeable 
 | Description                                                             | Status                    |
 | ----------------------------------------------------------------------- | ------------------------- |
 | See all countries from the API on the homepage on load                  | :white_check_mark:        |
-| Search for a country using an input field                               | :construction_worker_man: |
+| Search for a country using an input field                               | :white_check_mark:        |
 | Click on a country to see more detailed information on a separate page. | :white_check_mark:        |
-| Add end to end (E2E) tests                                              | :inbox_tray:              |
+| Add end to end (E2E) tests                                              | :construction_worker_man: |
 | Optimize for performance                                                | :inbox_tray:              |
 | Configure your repository to publish your code to a web address.        | :inbox_tray:              |
 | Toggle the color scheme between light and dark mode                     | :inbox_tray:              |
-| Filter countries by region                                              | :construction_worker_man: |
+| Filter countries by region                                              | :white_check_mark:        |
 | Click through to the border countries on the detail page                | :white_check_mark:        |
