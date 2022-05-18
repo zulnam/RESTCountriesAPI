@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { setRawCountriesAction } from './CountriesActions';
+import {
+  setRawCountriesAction,
+  setRegionFilterAction,
+  filterByRegionAction,
+} from './CountriesActions';
 
 const initialState = {
   rawCountries: [],
@@ -14,9 +18,12 @@ const countriesSlice = createSlice({
   initialState,
   reducers: {
     setRawCountries: setRawCountriesAction,
+    setRegionFilter: setRegionFilterAction,
+    filterByRegion: filterByRegionAction,
   },
 });
 
-export const { setRawCountries } = countriesSlice.actions;
+export const { setRawCountries, setRegionFilter, filterByRegion } =
+  countriesSlice.actions;
 
 export default countriesSlice.reducer;
