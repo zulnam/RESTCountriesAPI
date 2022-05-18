@@ -11,21 +11,35 @@ const CountriesContainer = styled.main`
 
 const CountriesGrid = () => {
   const countries = useSelector((state) => state.countries.rawCountries);
+  const filteredCountries = useSelector(
+    (state) => state.countries.filteredCountries
+  );
 
   return (
     <CountriesContainer>
-      {countries &&
-        countries.map((country) => (
-          <CountryCard
-            countryName={country.name}
-            imageLink={country.flag}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-            a3c={country.alpha3Code}
-            key={country.alpha3Code}
-          />
-        ))}
+      {filteredCountries.length
+        ? filteredCountries.map((country) => (
+            <CountryCard
+              countryName={country.name}
+              imageLink={country.flag}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+              a3c={country.alpha3Code}
+              key={country.alpha3Code}
+            />
+          ))
+        : countries.map((country) => (
+            <CountryCard
+              countryName={country.name}
+              imageLink={country.flag}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+              a3c={country.alpha3Code}
+              key={country.alpha3Code}
+            />
+          ))}
     </CountriesContainer>
   );
 };

@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { setRegionFilter } from '../../store/reducers/countries/countriesReducer';
 
 const DropdownButton = styled.button`
   background-color: white;
@@ -41,7 +43,14 @@ const IconContainer = styled.span`
 `;
 
 const Dropdown = () => {
+  const dispatch = useDispatch();
+  const regionFilter = useSelector((state) => state.countries.filters.region);
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleSelection = (region) => {
+    dispatch(setRegionFilter(region));
+    setIsOpen(false);
+  };
 
   return (
     <div>
@@ -50,10 +59,10 @@ const Dropdown = () => {
           setIsOpen(!isOpen);
         }}
       >
-        Filter By Region
+        {regionFilter ? regionFilter : 'Filter By Region'}
         <IconContainer>
           <Image
-            src="/down-chevron.svg"
+            src={isOpen ? '/up-chevron.svg' : '/down-chevron.svg'}
             width={16}
             height={16}
             alt="Search Icon"
@@ -64,7 +73,7 @@ const Dropdown = () => {
         <a
           href="#"
           onClick={() => {
-            console.log('merge');
+            handleSelection('Africa');
           }}
         >
           Africa
@@ -72,15 +81,15 @@ const Dropdown = () => {
         <a
           href="#"
           onClick={() => {
-            console.log('merge');
+            handleSelection('Americas');
           }}
         >
-          America
+          Americas
         </a>
         <a
           href="#"
           onClick={() => {
-            console.log('merge');
+            handleSelection('Asia');
           }}
         >
           Asia
@@ -88,7 +97,7 @@ const Dropdown = () => {
         <a
           href="#"
           onClick={() => {
-            console.log('merge');
+            handleSelection('Europe');
           }}
         >
           Europe
@@ -96,7 +105,7 @@ const Dropdown = () => {
         <a
           href="#"
           onClick={() => {
-            console.log('merge');
+            handleSelection('Oceania');
           }}
         >
           Oceania
