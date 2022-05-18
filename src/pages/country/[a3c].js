@@ -111,8 +111,8 @@ const Country = () => {
 
   return (
     <CountryPageContainer>
-      {console.log(country, isLoading, borderCountries, a3c)}
       <PrimaryButton
+        dataCy="back-button"
         width="136"
         height="40"
         onClick={() => {
@@ -136,6 +136,7 @@ const Country = () => {
             alt="Image of the country flag"
             width={560}
             height={400}
+            data-cy="country-image"
           />
           <CountryInfo>
             <h2>{country.name}</h2>
@@ -179,7 +180,7 @@ const Country = () => {
             </ListContainer>
             <BorderCountries>
               <strong>Border Countries: </strong>
-              <div>
+              <div data-cy="border-countries">
                 {borderCountries &&
                   borderCountries.map((country, key) => (
                     <Link

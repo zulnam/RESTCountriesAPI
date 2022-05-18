@@ -15,8 +15,13 @@ const ButtonContainer = styled.button`
 `;
 
 const PrimaryButton = React.forwardRef(
-  ({ children, width, height, onClick }) => (
-    <ButtonContainer onClick={onClick} width={width} height={height}>
+  ({ children, width, height, onClick, dataCy }) => (
+    <ButtonContainer
+      data-cy={dataCy}
+      onClick={onClick}
+      width={width}
+      height={height}
+    >
       {children}
     </ButtonContainer>
   )
