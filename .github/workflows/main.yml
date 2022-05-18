@@ -31,4 +31,4 @@ jobs:
         run: npm run test-h
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@
+        uses: codecov/codecov-action@v2
