@@ -72,7 +72,6 @@ const Dropdown = () => {
       </DropdownButton>
       <DropdownContent data-cy="dropdown-content" isOpen={isOpen}>
         <a
-          href="#"
           onClick={() => {
             handleSelection('Africa');
           }}
@@ -80,7 +79,6 @@ const Dropdown = () => {
           Africa
         </a>
         <a
-          href="#"
           onClick={() => {
             handleSelection('Americas');
           }}
@@ -88,7 +86,6 @@ const Dropdown = () => {
           Americas
         </a>
         <a
-          href="#"
           onClick={() => {
             handleSelection('Asia');
           }}
@@ -96,7 +93,6 @@ const Dropdown = () => {
           Asia
         </a>
         <a
-          href="#"
           onClick={() => {
             handleSelection('Europe');
           }}
@@ -104,7 +100,6 @@ const Dropdown = () => {
           Europe
         </a>
         <a
-          href="#"
           onClick={() => {
             handleSelection('Oceania');
           }}
