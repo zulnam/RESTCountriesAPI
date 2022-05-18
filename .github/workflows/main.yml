@@ -13,20 +13,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm run test-h
-        with:
+      - name: Tests
+      - uses: cypress-io/github-action@v2
+      - with:
+          build: npm run build
           start: npm run dev
 
       - name: Upload coverage to Codecov
