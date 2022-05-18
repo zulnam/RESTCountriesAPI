@@ -4,7 +4,7 @@ import {
   setRegionFilterAction,
   filterByRegionAction,
   searchForCountryAction,
-} from './CountriesActions';
+} from './countriesActions';
 
 const initialState = {
   rawCountries: [],
