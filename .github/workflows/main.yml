@@ -19,9 +19,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Tests
-      - uses: cypress-io/github-action@v2
-      - with:
+      - name: Run Tests
+        uses: cypress-io/github-action@v2
+        with:
           build: npm run build
           start: npm run dev
 
