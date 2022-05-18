@@ -3,6 +3,7 @@ import {
   setRawCountriesAction,
   setRegionFilterAction,
   filterByRegionAction,
+  searchForCountryAction,
 } from './CountriesActions';
 
 const initialState = {
@@ -20,10 +21,15 @@ const countriesSlice = createSlice({
     setRawCountries: setRawCountriesAction,
     setRegionFilter: setRegionFilterAction,
     filterByRegion: filterByRegionAction,
+    searchForCountry: searchForCountryAction,
   },
 });
 
-export const { setRawCountries, setRegionFilter, filterByRegion } =
-  countriesSlice.actions;
+export const {
+  setRawCountries,
+  setRegionFilter,
+  filterByRegion,
+  searchForCountry,
+} = countriesSlice.actions;
 
 export default countriesSlice.reducer;
