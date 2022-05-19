@@ -20,11 +20,11 @@ const Country = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const findCountryName = useCallback(() => {
-    if (borderCountries.find((entry) => entry.alpha3Code === neighbour)) {
-      return;
-    }
-
     country.borders.forEach((neighbour) => {
+      if (borderCountries.find((entry) => entry.alpha3Code === neighbour)) {
+        return;
+      }
+
       const neighbourData = countries.find(
         (country) => country.alpha3Code === neighbour
       );
@@ -36,7 +36,7 @@ const Country = () => {
         },
       ]);
     });
-  }, [borderCountries, countries, country.borders]);
+  }, [borderCountries, countries, country]);
 
   useEffect(() => {
     var findCountry = countries.find((country) => country.alpha3Code === a3c);
