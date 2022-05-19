@@ -27,7 +27,6 @@ const GlobalContainer = ({ children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="preload" href="https://restcountries.com" />
         <link rel="dns-prefetch" href="https://restcountries.com" />
       </Head>
       <Header />
