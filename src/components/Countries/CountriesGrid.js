@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import styled from '@emotion/styled';
 import CountryCard from './CountryCard';
+import LoadingComponent from '../Loading/LoadingComponent';
+import LoadingContainer from '../Loading/LoadingContainer';
 
 const CountriesContainer = styled.main`
   display: grid;
@@ -21,6 +23,12 @@ const CountriesGrid = () => {
       data-cy="countries-container"
       className={darkMode ? 'dark-theme-body' : 'light-theme-body'}
     >
+      {countries.length === 0 && (
+        <LoadingContainer>
+          <LoadingComponent />
+        </LoadingContainer>
+      )}
+
       {filteredCountries.length
         ? filteredCountries.map((country) => (
             <CountryCard
