@@ -6,7 +6,8 @@ This web app is a submission for the API Countries Challenge for the frontend, u
 
 ## Demo
 
-[Link to Demo](https://rest-countries-12341awfj-zulnam.vercel.app), courtesy of Vercel.
+[Link to Demo](https://rest-countries-6y6rzf8t1-zulnam.vercel.app/), courtesy of Vercel.
+
 
 ## Getting Started
 
