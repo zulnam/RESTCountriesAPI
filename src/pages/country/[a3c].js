@@ -11,11 +11,16 @@ import Details from '../../components/CountryPage/Details';
 import ListContainer from '../../components/CountryPage/ListContainer';
 import BorderCountries from '../../components/CountryPage/ BorderCountries';
 
+import LeftArrowSVG from '../../components/Icons/LeftArrow';
+
 const Country = () => {
   const ref = React.createRef();
   const router = useRouter();
   const { a3c } = router.query;
+
   const countries = useSelector((state) => state.countries.rawCountries);
+  const darkMode = useSelector((state) => state.user.darkMode);
+
   const [country, setCountry] = useState();
   const [borderCountries, setBorderCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -53,14 +58,26 @@ const Country = () => {
     }
   }, [country, findCountryName]);
 
-  const IconContainer = styled.span`
+  const LeftArrowIcon = styled.span`
     position: relative;
-    top: 2px;
-    margin-right: 1rem;
+    top: 3px;
+    margin-right: 8px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    svg path {
+      fill: ${(props) =>
+        props.darkMode ? theme.colors.white : theme.colors.darkBlue};
+      transition: fill 0.5s ease-in-out;
+    }
   `;
 
   const CountryPageContainer = styled.div`
     padding: 20px;
+    height: 100vh;
 
     @media (min-width: ${theme.breakpoints.md}) {
       padding: 32px;
@@ -84,8 +101,15 @@ const Country = () => {
   `;
 
   return (
-    <CountryPageContainer>
+    <CountryPageContainer
+      className={darkMode ? 'dark-theme-body' : 'light-theme-body'}
+    >
       <PrimaryButton
+        className={
+          darkMode
+            ? 'dark-theme-header dark-box-shadow'
+            : 'light-theme-header light-box-shadow'
+        }
         dataCy="back-button"
         width="136"
         height="40"
@@ -93,14 +117,9 @@ const Country = () => {
           router.back();
         }}
       >
-        <IconContainer>
-          <Image
-            src="/arrow-left.svg"
-            width={16}
-            height={16}
-            alt="Search Icon"
-          />
-        </IconContainer>
+        <LeftArrowIcon darkMode={darkMode}>
+          <LeftArrowSVG />
+        </LeftArrowIcon>
         Back
       </PrimaryButton>
       {!isLoading ? (
@@ -163,6 +182,11 @@ const Country = () => {
                       href={`/country/${country.alpha3Code}`}
                     >
                       <PrimaryButton
+                        className={
+                          darkMode
+                            ? 'dark-theme-header dark-box-shadow'
+                            : 'light-theme-header light-box-shadow'
+                        }
                         width={100}
                         height={36}
                         onClick={() => setBorderCountries([])}
