@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import Link from 'next/link';
 
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
+import theme from '../../styles/theme';
 
 const Country = () => {
   const router = useRouter();
@@ -53,59 +54,89 @@ const Country = () => {
   `;
 
   const CountryPageContainer = styled.div`
-    padding: 2rem;
-  `;
+    padding: 20px;
 
-  const CountryInfo = styled.article`
-    h2 {
-      margin-top: 2rem;
-      margin-bottom: 0;
-      font-size: 1.4rem;
-    }
-    img {
-      width: 100%;
-    }
-    ul {
-      margin-top: 1.8rem;
-      letter-spacing: -0.015rem;
-      list-style: none;
-      font-size: 0.9rem;
-      padding-left: 0;
-      margin-right: 8rem;
-      strong {
-        font-weight: 600;
-      }
-      li {
-        padding-bottom: 0.62rem;
-      }
+    @media (min-width: ${theme.breakpoints.md}) {
+      padding: 32px;
     }
   `;
 
   const Details = styled.main`
     display: grid;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: 0px 80px;
+    grid-template-rows: 0.6fr 1fr;
+
+    @media (min-width: ${theme.breakpoints.md}) {
+      grid-template-rows: unset;
+      grid-template-columns: 0.8fr 1fr;
+      gap: 0px 80px;
+    }
+  `;
+
+  const CountryTitle = styled.h2`
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
   `;
 
   const ListContainer = styled.div`
-    display: inline-flex;
-    margin-bottom: 1rem;
-    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 0.8fr;
+    gap: 20px 0;
+
+    ul {
+      letter-spacing: -0.015rem;
+      list-style: none;
+      font-size: 0.9rem;
+      padding-left: 0;
+      strong {
+        font-weight: 500;
+      }
+      li {
+        padding-bottom: 0.62rem;
+      }
+    }
+
+    @media (min-width: ${theme.breakpoints.md}) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: unset;
+      gap: 0 20px;
+      margin-bottom: 1rem;
+    }
+  `;
+
+  const ImageContainer = styled.span`
+    position: relative;
+    max-height: 220px;
+
+    @media (min-width: ${theme.breakpoints.md}) {
+      max-width: 560px;
+      max-height: 400px;
+    }
   `;
 
   const BorderCountries = styled.div`
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
 
     strong {
-      margin-right: 1rem;
+      margin-bottom: 16px;
     }
 
     div {
+      width: 100%;
       display: grid;
       grid-auto-rows: 44px;
-      grid-template-columns: 100px 100px 100px;
-      gap: 0px 10px px;
+      grid-template-columns: repeat(auto-fill, 100px);
+      gap: 0px 10px;
+    }
+
+    @media (min-width: ${theme.breakpoints.md}) {
+      flex-direction: row;
+
+      strong {
+        margin-bottom: unset;
+        margin-right: 16px;
+      }
     }
   `;
 
@@ -131,15 +162,16 @@ const Country = () => {
       </PrimaryButton>
       {!isLoading ? (
         <Details>
-          <Image
-            src={country.flag}
-            alt="Image of the country flag"
-            width={560}
-            height={400}
-            data-cy="country-image"
-          />
-          <CountryInfo>
-            <h2>{country.name}</h2>
+          <ImageContainer>
+            <Image
+              src={country.flag}
+              alt="Image of the country flag"
+              layout="fill"
+              data-cy="country-image"
+            />
+          </ImageContainer>
+          <article>
+            <CountryTitle>{country.name}</CountryTitle>
             <ListContainer>
               <ul>
                 <li>
@@ -180,9 +212,9 @@ const Country = () => {
             </ListContainer>
             <BorderCountries>
               <strong>Border Countries: </strong>
-              <div data-cy="border-countries">
-                {borderCountries &&
-                  borderCountries.map((country, key) => (
+              {borderCountries.length ? (
+                <div data-cy="border-countries">
+                  {borderCountries.map((country, key) => (
                     <Link
                       key={`${country.alpha3Code}+${key}`}
                       href={`/country/${country.alpha3Code}`}
@@ -196,9 +228,12 @@ const Country = () => {
                       </PrimaryButton>
                     </Link>
                   ))}
-              </div>
+                </div>
+              ) : (
+                <p>No neighbouring countries.</p>
+              )}
             </BorderCountries>
-          </CountryInfo>
+          </article>
         </Details>
       ) : (
         <>Loading...</>
