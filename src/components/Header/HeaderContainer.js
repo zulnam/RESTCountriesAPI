@@ -5,8 +5,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
-  margin-bottom: 20px;
+  padding: 0 20px 0 40px;
   height: 80px;
   width: 100%;
 
@@ -15,8 +14,7 @@ const HeaderContainer = styled.header`
     font-size: 0.9rem;
   }
   @media (min-width: ${theme.breakpoints.md}) {
-    padding: 0 42px;
-    margin-bottom: 42px;
+    padding: 40px 40px 80px 40px;
 
     h1 {
       font-weight: 800;
