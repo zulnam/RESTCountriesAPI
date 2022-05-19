@@ -4,13 +4,18 @@ import styled from '@emotion/styled';
 import Dropdown from './Dropdown';
 import SearchInput from './SearchInput';
 import { filterByRegion } from '../../store/reducers/countries/countriesReducer';
+import theme from '../../styles/theme';
 
 const FiltersContainer = styled.div`
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 42px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 10px 24px 10px;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    flex-direction: row;
+    margin: 0 100px 42px 100px;
+  }
 `;
 
 const Filters = () => {
