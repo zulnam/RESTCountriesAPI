@@ -24,6 +24,7 @@ const CountriesGrid = () => {
       {filteredCountries.length
         ? filteredCountries.map((country) => (
             <CountryCard
+              darkMode={darkMode}
               countryName={country.name}
               imageLink={country.flag}
               population={country.population}
@@ -35,6 +36,7 @@ const CountriesGrid = () => {
           ))
         : countries.map((country) => (
             <CountryCard
+              darkMode={darkMode}
               countryName={country.name}
               imageLink={country.flag}
               population={country.population}

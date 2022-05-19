@@ -5,7 +5,6 @@ import styled from '@emotion/styled';
 const CountryContainer = styled.article`
   display: grid;
   border-radius: 0.5rem;
-  box-shadow: 0 5px 10px -5px #ccc, 0 -1px 10px -5px #eee;
   cursor: pointer;
   img {
     border-top-left-radius: 0.5rem;
@@ -35,9 +34,12 @@ const CountryCard = ({
   region,
   capital,
   a3c,
+  darkMode,
 }) => (
   <Link href={`/country/${a3c}`}>
-    <CountryContainer>
+    <CountryContainer
+      className={darkMode ? 'dark-box-shadow' : 'light-box-shadow'}
+    >
       <Image
         src={imageLink}
         alt="Image of the country flag"
