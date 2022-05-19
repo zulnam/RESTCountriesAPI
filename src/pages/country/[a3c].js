@@ -17,20 +17,22 @@ const Country = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const findCountryName = useCallback(() => {
-    if (country) {
-      country.borders.forEach((neighbour) => {
-        const neighbourData = countries.find(
-          (country) => country.alpha3Code === neighbour
-        );
-        setBorderCountries((existingData) => [
-          ...existingData,
-          {
-            alpha3Code: neighbour,
-            name: neighbourData.name,
-          },
-        ]);
-      });
+    if (borderCountries.find((entry) => entry.alpha3Code === neighbour)) {
+      return;
     }
+
+    country.borders.forEach((neighbour) => {
+      const neighbourData = countries.find(
+        (country) => country.alpha3Code === neighbour
+      );
+      setBorderCountries((existingData) => [
+        ...existingData,
+        {
+          alpha3Code: neighbour,
+          name: neighbourData.name,
+        },
+      ]);
+    });
   }, [countries, country]);
 
   useEffect(() => {
