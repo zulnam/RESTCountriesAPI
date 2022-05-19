@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
+import theme from './theme';
 
 const globalStyles = css`
   html,
   body {
     padding: 0;
     margin: 0;
-    background-color: #fafafa;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
@@ -19,14 +19,28 @@ const globalStyles = css`
     box-sizing: border-box;
   }
 
-  .dark-theme {
-    background-color: #2b3945;
-    color: #fff;
+  .white-theme-header {
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.charcoal};
+    transition: all 0.5s ease-in-out;
   }
 
-  .white-theme {
-    background-color: #fff;
-    color: #111517;
+  .white-theme-body {
+    background-color: ${theme.colors.creamWhite};
+    color: ${theme.colors.charcoal};
+    transition: all 0.5s ease-in-out;
+  }
+
+  .dark-theme-header {
+    background-color: ${theme.colors.darkBlue};
+    color: ${theme.colors.white};
+    transition: all 0.5s ease-in-out;
+  }
+
+  .dark-theme-body {
+    background-color: ${theme.colors.darkerBlue};
+    color: ${theme.colors.white};
+    transition: all 0.5s ease-in-out;
   }
 `;
 
