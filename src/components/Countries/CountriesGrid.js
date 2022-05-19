@@ -17,7 +17,10 @@ const CountriesGrid = () => {
   );
 
   return (
-    <CountriesContainer data-cy="countries-container">
+    <CountriesContainer
+      data-cy="countries-container"
+      className={darkMode ? 'dark-theme-body' : 'light-theme-body'}
+    >
       {filteredCountries.length
         ? filteredCountries.map((country) => (
             <CountryCard
