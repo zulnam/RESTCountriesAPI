@@ -5,8 +5,11 @@ import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
 
-import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import theme from '../../styles/theme';
+import PrimaryButton from '../../components/Buttons/PrimaryButton';
+import Details from '../../components/CountryPage/Details';
+import ListContainer from '../../components/CountryPage/ListContainer';
+import BorderCountries from '../../components/CountryPage/ BorderCountries';
 
 const Country = () => {
   const router = useRouter();
@@ -63,47 +66,10 @@ const Country = () => {
     }
   `;
 
-  const Details = styled.main`
-    display: grid;
-    grid-template-rows: 0.6fr 1fr;
-
-    @media (min-width: ${theme.breakpoints.md}) {
-      grid-template-rows: unset;
-      grid-template-columns: 0.8fr 1fr;
-      gap: 0px 80px;
-    }
-  `;
-
   const CountryTitle = styled.h2`
     margin-top: 20px;
     margin-bottom: 8px;
     font-size: 1.4rem;
-  `;
-
-  const ListContainer = styled.div`
-    display: grid;
-    grid-template-rows: 1fr 0.8fr;
-    gap: 20px 0;
-
-    ul {
-      letter-spacing: -0.015rem;
-      list-style: none;
-      font-size: 0.9rem;
-      padding-left: 0;
-      strong {
-        font-weight: 500;
-      }
-      li {
-        padding-bottom: 0.62rem;
-      }
-    }
-
-    @media (min-width: ${theme.breakpoints.md}) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: unset;
-      gap: 0 20px;
-      margin-bottom: 1rem;
-    }
   `;
 
   const ImageContainer = styled.span`
@@ -113,32 +79,6 @@ const Country = () => {
     @media (min-width: ${theme.breakpoints.md}) {
       max-width: 560px;
       max-height: 400px;
-    }
-  `;
-
-  const BorderCountries = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    strong {
-      margin-bottom: 16px;
-    }
-
-    div {
-      width: 100%;
-      display: grid;
-      grid-auto-rows: 44px;
-      grid-template-columns: repeat(auto-fill, 100px);
-      gap: 0px 10px;
-    }
-
-    @media (min-width: ${theme.breakpoints.md}) {
-      flex-direction: row;
-
-      strong {
-        margin-bottom: unset;
-        margin-right: 16px;
-      }
     }
   `;
 
