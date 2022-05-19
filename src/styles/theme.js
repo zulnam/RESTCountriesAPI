@@ -28,6 +28,8 @@ theme.colors = {
   creamWhite: 'rgba(250, 250, 250, 1)',
   darkBlue: 'rgba(43, 57, 69, 1)',
   darkerBlue: 'rgba(32, 44, 55, 1)',
+  darkShadow: 'rgba(34, 34, 34, 1)',
+  lightShadow: 'rgba(204, 204, 204, 1)',
 };
 
 export default theme;
