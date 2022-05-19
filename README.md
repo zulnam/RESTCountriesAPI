@@ -45,4 +45,4 @@ These is the work required to consider this project "done", split into sizeable 
 ## Known Issues
 
 1. Redux search action fired on homepage landing.
-2. Dark/Light transition animation not working accordingly on country details page.
+2. ~~Dark/Light transition animation not working accordingly on country details page.~~
