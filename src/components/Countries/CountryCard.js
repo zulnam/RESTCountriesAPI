@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from '@emotion/styled';
@@ -62,4 +63,4 @@ const CountryCard = ({
   </Link>
 );
 
-export default CountryCard;
+export default React.memo(CountryCard);
