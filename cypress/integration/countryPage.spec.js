@@ -21,7 +21,6 @@ describe('Country Page tests', () => {
     cy.get('[data-cy="country-image"]')
       .should('be.visible')
       .and((image) => {
-        console.log(image);
         expect(image[0].naturalWidth).to.be.greaterThan(200);
       });
 
