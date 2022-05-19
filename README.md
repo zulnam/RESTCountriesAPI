@@ -11,6 +11,7 @@ This web app is a submission for the API Countries Challenge for the frontend, u
 ## Getting Started
 
 After clonning the repository, run `yarn` or `npm i` to install the necessary dependencies.
+
 To run local development environent, run `yarn dev` or `npm run dev`.
 
 ## All Commands
