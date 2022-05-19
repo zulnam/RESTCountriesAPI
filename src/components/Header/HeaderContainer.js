@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import theme from '../styles/theme';
+import theme from '../../styles/theme';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -25,11 +25,4 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const Header = () => (
-  <HeaderContainer className="white-theme">
-    <h1>Where in the world?</h1>
-    <span>Dark Mode</span>
-  </HeaderContainer>
-);
-
-export default Header;
+export default HeaderContainer;

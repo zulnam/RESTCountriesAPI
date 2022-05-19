@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { getCountries } from '../pages/api/hello';
 import { useDispatch, useSelector } from 'react-redux';
 import { setRawCountries } from '../store/reducers/countries/countriesReducer';
-import Header from './Header';
+import Header from './Header/Header';
 
 const GlobalContainer = ({ children }) => {
   const dispatch = useDispatch();
