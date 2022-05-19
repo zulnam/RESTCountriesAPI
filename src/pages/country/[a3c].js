@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
 
-import theme from '../../styles/theme';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import Details from '../../components/CountryPage/Details';
 import ListContainer from '../../components/CountryPage/ListContainer';
 import BorderCountries from '../../components/CountryPage/ BorderCountries';
-
+import CountryTitle from '../../components/CountryPage/CountryTitle';
+import CountryPageContainer from '../../components/CountryPage/CountryPageContainer';
+import LeftArrowIcon from '../../components/CountryPage/LeftArrowIcon';
+import ImageContainer from '../../components/CountryPage/ImageContainer';
 import LeftArrowSVG from '../../components/Icons/LeftArrow';
 
 const Country = () => {
@@ -57,48 +58,6 @@ const Country = () => {
       }
     }
   }, [country, findCountryName]);
-
-  const LeftArrowIcon = styled.span`
-    position: relative;
-    top: 3px;
-    margin-right: 8px;
-
-    svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    svg path {
-      fill: ${(props) =>
-        props.darkMode ? theme.colors.white : theme.colors.darkBlue};
-      transition: fill 0.5s ease-in-out;
-    }
-  `;
-
-  const CountryPageContainer = styled.div`
-    padding: 20px;
-    height: 100vh;
-
-    @media (min-width: ${theme.breakpoints.md}) {
-      padding: 32px;
-    }
-  `;
-
-  const CountryTitle = styled.h2`
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-size: 1.4rem;
-  `;
-
-  const ImageContainer = styled.span`
-    position: relative;
-    max-height: 220px;
-
-    @media (min-width: ${theme.breakpoints.md}) {
-      max-width: 560px;
-      max-height: 400px;
-    }
-  `;
 
   return (
     <CountryPageContainer
