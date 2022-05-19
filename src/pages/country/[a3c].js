@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -12,6 +12,7 @@ import ListContainer from '../../components/CountryPage/ListContainer';
 import BorderCountries from '../../components/CountryPage/ BorderCountries';
 
 const Country = () => {
+  const ref = React.createRef();
   const router = useRouter();
   const { a3c } = router.query;
   const countries = useSelector((state) => state.countries.rawCountries);
@@ -165,6 +166,7 @@ const Country = () => {
                         width={100}
                         height={36}
                         onClick={() => setBorderCountries([])}
+                        ref={ref}
                       >
                         {country.name}
                       </PrimaryButton>

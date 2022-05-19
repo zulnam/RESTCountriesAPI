@@ -14,18 +14,17 @@ const ButtonContainer = styled.button`
   cursor: pointer;
 `;
 
-const PrimaryButton = React.forwardRef(
-  ({ children, width, height, onClick, dataCy }) => (
-    <ButtonContainer
-      data-cy={dataCy}
-      onClick={onClick}
-      width={width}
-      height={height}
-    >
-      {children}
-    </ButtonContainer>
-  )
-);
+const PrimaryButton = React.forwardRef((props, ref) => (
+  <ButtonContainer
+    ref={ref}
+    data-cy={props.dataCy}
+    onClick={props.onClick}
+    width={props.width}
+    height={props.height}
+  >
+    {props.children}
+  </ButtonContainer>
+));
 PrimaryButton.displayName = 'PrimaryButton';
 
 export default PrimaryButton;
