@@ -27,7 +27,11 @@ const SearchInput = () => {
 
   return (
     <SearchContainer
-      className={darkMode ? 'dark-theme-header' : 'light-theme-header'}
+      className={
+        darkMode
+          ? 'dark-theme-header dark-box-shadow'
+          : 'light-theme-header light-box-shadow'
+      }
     >
       <SearchIcon darkMode={darkMode}>
         <SearchIconSVG />

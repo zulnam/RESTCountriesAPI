@@ -21,7 +21,11 @@ const Dropdown = () => {
   return (
     <div>
       <DropdownButton
-        className={darkMode ? 'dark-theme-header' : 'light-theme-header'}
+        className={
+          darkMode
+            ? 'dark-theme-header dark-box-shadow'
+            : 'light-theme-header light-box-shadow'
+        }
         data-cy="dropdown-button"
         onClick={() => {
           setIsOpen(!isOpen);
