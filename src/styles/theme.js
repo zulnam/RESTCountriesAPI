@@ -25,6 +25,7 @@ theme.fontWeights = {
 theme.colors = {
   charcoal: 'rgba(17, 21, 23, 1)',
   white: 'rgba(255, 255, 255, 1)',
+  creamWhite: 'rgba(250, 250, 250, 1)',
   darkBlue: 'rgba(43, 57, 69, 1)',
   darkerBlue: 'rgba(32, 44, 55, 1)',
 };
