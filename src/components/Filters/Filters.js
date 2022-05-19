@@ -10,17 +10,18 @@ const FiltersContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 10px 24px 10px;
+  padding: 30px 10px 24px 10px;
 
   @media (min-width: ${theme.breakpoints.md}) {
     flex-direction: row;
-    margin: 0 100px 42px 100px;
+    padding: 30px 100px 42px 100px;
   }
 `;
 
 const Filters = () => {
   const dispatch = useDispatch();
   const regionFilter = useSelector((state) => state.countries.filters.region);
+  const darkMode = useSelector((state) => state.user.darkMode);
 
   useEffect(() => {
     if (regionFilter) {
@@ -29,7 +30,9 @@ const Filters = () => {
   }, [dispatch, regionFilter]);
 
   return (
-    <FiltersContainer>
+    <FiltersContainer
+      className={darkMode ? 'dark-theme-body' : 'light-theme-body'}
+    >
       <SearchInput />
       <Dropdown />
     </FiltersContainer>
