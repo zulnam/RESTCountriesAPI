@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from '@emotion/styled';
-import Dropdown from './Dropdown';
-import SearchInput from './SearchInput';
+import Dropdown from './Dropdown/Dropdown';
+import SearchInput from './Search/SearchInput';
 import { filterByRegion } from '../../store/reducers/countries/countriesReducer';
 import theme from '../../styles/theme';
 

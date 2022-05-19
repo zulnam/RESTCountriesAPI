@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setRegionFilter } from '../../store/reducers/countries/countriesReducer';
+import { setRegionFilter } from '../../../store/reducers/countries/countriesReducer';
 
 import DropdownButton from './DropdownButton';
 import DropdownContent from './DropdownContent';
 import ChevronIcon from './ChevronIcon';
-import ChevronIconSVG from '../Icons/Chevron';
+import ChevronIconSVG from '../../Icons/Chevron';
 
 const Dropdown = () => {
   const dispatch = useDispatch();

@@ -1,11 +1,11 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchForCountry } from '../../store/reducers/countries/countriesReducer';
+import { searchForCountry } from '../../../store/reducers/countries/countriesReducer';
 
 import SearchContainer from './SearchContainer';
 import SearchIcon from './SearchIcon';
 import Input from './Input';
-import SearchIconSVG from '../Icons/Search';
+import SearchIconSVG from '../../Icons/Search';
 
 const SearchInput = () => {
   const dispatch = useDispatch();

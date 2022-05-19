@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import theme from '../../styles/theme';
+import theme from '../../../styles/theme';
 
 const ChevronIcon = styled.span`
   margin-left: 1rem;
