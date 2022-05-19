@@ -33,7 +33,7 @@ const Country = () => {
         },
       ]);
     });
-  }, [countries, country]);
+  }, [borderCountries, countries, country.borders]);
 
   useEffect(() => {
     var findCountry = countries.find((country) => country.alpha3Code === a3c);
