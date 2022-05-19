@@ -11,6 +11,7 @@ const CountriesContainer = styled.main`
 
 const CountriesGrid = () => {
   const countries = useSelector((state) => state.countries.rawCountries);
+  const darkMode = useSelector((state) => state.user.darkMode);
   const filteredCountries = useSelector(
     (state) => state.countries.filteredCountries
   );

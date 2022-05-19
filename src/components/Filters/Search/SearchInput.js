@@ -27,13 +27,13 @@ const SearchInput = () => {
 
   return (
     <SearchContainer
-      className={darkMode ? 'dark-theme-header' : 'white-theme-header'}
+      className={darkMode ? 'dark-theme-header' : 'light-theme-header'}
     >
       <SearchIcon darkMode={darkMode}>
         <SearchIconSVG />
       </SearchIcon>
       <Input
-        className={darkMode ? 'dark-theme-header' : 'white-theme-header'}
+        className={darkMode ? 'dark-theme-header' : 'light-theme-header'}
         type="text"
         name="search"
         data-cy="search-input"

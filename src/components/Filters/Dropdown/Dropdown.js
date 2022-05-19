@@ -21,7 +21,7 @@ const Dropdown = () => {
   return (
     <div>
       <DropdownButton
-        className={darkMode ? 'dark-theme-header' : 'white-theme-header'}
+        className={darkMode ? 'dark-theme-header' : 'light-theme-header'}
         data-cy="dropdown-button"
         onClick={() => {
           setIsOpen(!isOpen);
@@ -33,7 +33,7 @@ const Dropdown = () => {
         </ChevronIcon>
       </DropdownButton>
       <DropdownContent
-        className={darkMode ? 'dark-theme-header' : 'white-theme-header'}
+        className={darkMode ? 'dark-theme-header' : 'light-theme-header'}
         data-cy="dropdown-content"
         isOpen={isOpen}
       >

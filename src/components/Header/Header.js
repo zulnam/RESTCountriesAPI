@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <HeaderContainer
-      className={darkMode ? 'dark-theme-header' : 'white-theme-header'}
+      className={darkMode ? 'dark-theme-header' : 'light-theme-header'}
     >
       <h1>Where in the world?</h1>
       <MoonIcon

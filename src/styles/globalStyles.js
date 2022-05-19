@@ -19,13 +19,13 @@ const globalStyles = css`
     box-sizing: border-box;
   }
 
-  .white-theme-header {
+  .light-theme-header {
     background-color: ${theme.colors.white};
     color: ${theme.colors.charcoal};
     transition: all 0.5s ease-in-out;
   }
 
-  .white-theme-body {
+  .light-theme-body {
     background-color: ${theme.colors.creamWhite};
     color: ${theme.colors.charcoal};
     transition: all 0.5s ease-in-out;

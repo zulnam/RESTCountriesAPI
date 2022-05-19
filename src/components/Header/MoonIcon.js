@@ -12,7 +12,8 @@ const MoonIcon = styled.span`
   }
 
   svg path {
-    fill: ${(props) => (props.darkMode ? 'white' : theme.colors.darkBlue)};
+    fill: ${(props) =>
+      props.darkMode ? theme.colors.white : theme.colors.darkBlue};
     transition: fill 0.5s ease-in-out;
   }
 `;
