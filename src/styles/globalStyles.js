@@ -42,6 +42,16 @@ const globalStyles = css`
     color: ${theme.colors.white};
     transition: all 0.5s ease-in-out;
   }
+
+  .light-box-shadow {
+    box-shadow: 0 5px 10px -5px ${theme.colors.lightShadow},
+      0 -1px 10px -5px ${theme.colors.lightShadow};
+  }
+
+  .dark-box-shadow {
+    box-shadow: 0 5px 10px -5px ${theme.colors.darkShadow},
+      0 -1px 10px -5px ${theme.colors.darkShadow};
+  }
 `;
 
 export default globalStyles;
