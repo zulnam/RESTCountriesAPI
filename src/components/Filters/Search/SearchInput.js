@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchForCountry } from '../../../store/reducers/countries/countriesReducer';
 
@@ -12,13 +12,17 @@ const SearchInput = () => {
   const regionFilter = useSelector((state) => state.countries.filters.region);
   const darkMode = useSelector((state) => state.user.darkMode);
   const [value, setValue] = useState('');
+  const prevValue = useRef(undefined);
 
   const changeHandler = useCallback((event) => {
     setValue(event.target.value);
+    prevValue.current = event.target.value;
   }, []);
 
   useEffect(() => {
-    dispatch(searchForCountry(value));
+    if (prevValue.current != undefined) {
+      dispatch(searchForCountry(value));
+    }
   }, [dispatch, value]);
 
   useEffect(() => {
