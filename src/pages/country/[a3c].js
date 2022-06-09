@@ -148,6 +148,7 @@ const Country = () => {
                         }
                         width={100}
                         height={36}
+                        fontSize={country.name.length > 15 ? 0.6 : 0.9}
                         onClick={() => setBorderCountries([])}
                         ref={ref}
                       >
