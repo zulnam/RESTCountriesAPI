@@ -1,8 +1,10 @@
+import React, { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import styled from '@emotion/styled';
-import CountryCard from './CountryCard';
 import LoadingComponent from '../Loading/LoadingComponent';
 import LoadingContainer from '../Loading/LoadingContainer';
+
+const CountryCard = React.lazy(() => import('./CountryCard'));
 
 const CountriesContainer = styled.main`
   display: grid;
@@ -43,16 +45,17 @@ const CountriesGrid = () => {
             />
           ))
         : countries.map((country) => (
-            <CountryCard
-              darkMode={darkMode}
-              countryName={country.name}
-              imageLink={country.flag}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-              a3c={country.alpha3Code}
-              key={country.alpha3Code}
-            />
+            <Suspense key={country.alpha3Code} fallback={<div>Loading...</div>}>
+              <CountryCard
+                darkMode={darkMode}
+                countryName={country.name}
+                imageLink={country.flag}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                a3c={country.alpha3Code}
+              />
+            </Suspense>
           ))}
     </CountriesContainer>
   );
