@@ -97,37 +97,45 @@ const Country = () => {
               <ul>
                 <li>
                   <strong>Native Name: </strong>
-                  {country.nativeName}
+                  {country.nativeName ? country.nativeName : 'N/A'}
                 </li>
                 <li>
                   <strong>Population: </strong>
-                  {country.population.toLocaleString()}
+                  {country.population
+                    ? country.population.toLocaleString()
+                    : 'N/A'}
                 </li>
                 <li>
                   <strong>Region: </strong>
-                  {country.region}
+                  {country.region ? country.region : 'N/A'}
                 </li>
                 <li>
                   <strong>Sub Region: </strong>
-                  {country.subregion}
+                  {country.subregion ? country.subregion : 'N/A'}
                 </li>
                 <li>
                   <strong>Capital: </strong>
-                  {country.capital}
+                  {country.capital ? country.capital : 'N/A'}
                 </li>
               </ul>
               <ul>
                 <li>
                   <strong>Top Level Domain: </strong>
-                  {country.topLevelDomain.join(', ')}
+                  {country.topLevelDomain
+                    ? country.topLevelDomain.join(', ')
+                    : 'N/A'}
                 </li>
                 <li>
                   <strong>Currencies: </strong>
-                  {country.currencies.map((entry) => entry.code).join(', ')}
+                  {country.currencies
+                    ? country.currencies.map((entry) => entry.code).join(', ')
+                    : 'N/A'}
                 </li>
                 <li>
                   <strong>Languages: </strong>
-                  {country.languages.map((entry) => entry.name).join(', ')}
+                  {country.languages
+                    ? country.languages.map((entry) => entry.name).join(', ')
+                    : 'N/A'}
                 </li>
               </ul>
             </ListContainer>
