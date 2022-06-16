@@ -8,8 +8,9 @@ const ButtonContainer = styled.button`
   width: ${(props) => (props.width ? `${props.width}px;` : 'unset;')};
   height: ${(props) => (props.height ? `${props.height}px;` : 'unset;')};
   padding-bottom: 0.1rem;
-  font-size: 0.9rem;
+  font-size: ${(props) => (props.fontSize ? `${props.fontSize}rem` : '0.9rem')};
   cursor: pointer;
+  overflow: hidden;
 `;
 
 const PrimaryButton = React.forwardRef((props, ref) => (
@@ -20,6 +21,7 @@ const PrimaryButton = React.forwardRef((props, ref) => (
     width={props.width}
     height={props.height}
     className={props.className}
+    fontSize={props.fontSize}
   >
     {props.children}
   </ButtonContainer>
