@@ -37,7 +37,7 @@ These is the work required to consider this project "done", split into sizeable 
 | Search for a country using an input field                               | :white_check_mark:        |
 | Click on a country to see more detailed information on a separate page. | :white_check_mark:        |
 | Add end to end (E2E) tests                                              | :white_check_mark:        |
-| Optimize for performance                                                | :construction_worker_man: |
+| Optimize for performance                                                | :white_check_mark: |
 | Configure your repository to publish your code to a web address.        | :white_check_mark:        |
 | Toggle the color scheme between light and dark mode                     | :white_check_mark:        |
 | Filter countries by region                                              | :white_check_mark:        |
