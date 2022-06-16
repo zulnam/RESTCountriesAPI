@@ -26,6 +26,7 @@ const Country = () => {
   const [borderCountries, setBorderCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  //filter all countries to get data for border countries
   const findCountryName = useCallback(() => {
     country.borders.forEach((neighbour) => {
       if (borderCountries.find((entry) => entry.alpha3Code === neighbour)) {
@@ -45,11 +46,14 @@ const Country = () => {
     });
   }, [borderCountries, countries, country]);
 
+  //get loaded country data from store
   useEffect(() => {
+    setBorderCountries([]);
     var findCountry = countries.find((country) => country.alpha3Code === a3c);
     setCountry(findCountry);
   }, [a3c, countries]);
 
+  //get border countries data
   useEffect(() => {
     if (country) {
       setIsLoading(false);
