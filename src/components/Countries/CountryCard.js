@@ -50,13 +50,14 @@ const CountryCard = ({
       <h3>{countryName}</h3>
       <ul>
         <li>
-          <strong>Population:</strong> {population.toLocaleString()}
+          <strong>Population:</strong>{' '}
+          {population ? population.toLocaleString() : 'N/A'}
         </li>
         <li>
-          <strong>Region:</strong> {region}
+          <strong>Region:</strong> {region ? region : 'N/A'}
         </li>
         <li>
-          <strong>Capital:</strong> {capital}
+          <strong>Capital:</strong> {capital ? capital : 'N/A'}
         </li>
       </ul>
     </CountryContainer>
